@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var walk_speed = 50.0
 @export var run_speed = 75.0
-@export var jump_force = 300.0
+@export var jump_force = 200.0
 var gravity_magnitude : float = 9.8
 
 var x_input = 0.0
