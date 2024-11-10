@@ -9,7 +9,8 @@ var character: Character
 	'moving': get_node("Moving"),
 	'running': get_node("Running"),
 	'jumping': get_node("Jumping"),
-	'falling': get_node("Falling")
+	'falling': get_node("Falling"),
+	'attack': get_node("Attack")
 }
 
 func init(character: Character):

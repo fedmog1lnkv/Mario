@@ -15,3 +15,4 @@ func on_physics_process(delta: float):
 	character.ensure_rotation()
 	character.fall()
 	character.move_and_slide()
+	process_attack()

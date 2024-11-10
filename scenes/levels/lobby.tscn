@@ -2482,7 +2482,7 @@ position = Vector2(154, -81)
 
 [node name="Player" parent="." instance=ExtResource("1_t1p72")]
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(-10, 0)
 offset = Vector2(0, -30)
 zoom = Vector2(6, 6)
@@ -2490,8 +2490,12 @@ limit_left = 0
 limit_top = -200
 limit_right = 1000
 limit_bottom = 400
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 editor_draw_limits = true
 script = ExtResource("2_x16k5")
+target = NodePath("../Player")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
@@ -2536,7 +2540,7 @@ motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite" type="Sprite2D" parent="Background/Layer3"]
-position = Vector2(512, -174)
+position = Vector2(512, -173)
 texture = ExtResource("5_fu1g0")
 
 [node name="Layer2" type="ParallaxLayer" parent="Background"]
@@ -2561,9 +2565,9 @@ texture = ExtResource("7_bs7iu")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(-15, 2)
 tile_set = SubResource("TileSet_tstsd")
 format = 2
+layer_0/tile_data = PackedInt32Array(524306, 1507329, 2, 393233, 262145, 5, 458769, 262145, 5, 524305, 262145, 5, 589841, 262145, 5, 655377, 262145, 5, 393232, 262145, 5)
 
 [node name="Front" type="TileMapLayer" parent="TileMap"]
 z_index = 1
@@ -2584,7 +2588,7 @@ use_kinematic_bodies = true
 [node name="Undeground" type="TileMapLayer" parent="TileMap"]
 texture_filter = 1
 use_parent_material = true
-tile_map_data = PackedByteArray("AAASAAcAAQAXAAQAAAASAAgAAQAXAAUAAAASAAkAAQAXAAUAAAASAAoAAQAXAAIAAAASAAsAAQAXAAMAAAASAAwAAQAXAAQAAAASAA0AAQAXAAUAAAARAAYAAQAEAAUAAAARAAcAAQAEAAUAAAARAAgAAQAEAAUAAAARAAkAAQAEAAUAAAARAAoAAQAEAAUAAAARAAsAAQAEAAUAAAARAAwAAQAEAAUAAAARAA0AAQAEAAUAAAASAAQAAQAXAAEAAAASAAUAAQAXAAIAAAASAAYAAQAXAAMAAAASAA4AAQAXAAYAAAAYAAYAAQAEAAUAAAAYAAcAAQAEAAUAAAAYAAgAAQAEAAUAAAAYAAkAAQAEAAUAAAAYAAsAAQAEAAUAAAAYAAwAAQAEAAUAAAAYAA0AAQAEAAUAAAAYAAoAAQAEAAUAAAAXAAQAAQAWAAEAAAAXAAUAAQAWAAIAAAAXAAYAAQAWAAMAAAAXAAcAAQAWAAQAAAAXAAgAAQAWAAUAAAAXAAkAAQAWAAIAAAAXAAoAAQAWAAIAAAAXAAsAAQAWAAIAAAAXAAwAAQAWAAIAAAAXAA0AAQAWAAIAAAAXAA4AAQAWAAYAAAA=")
+tile_map_data = PackedByteArray("AAASAAcAAQAXAAQAAAASAAgAAQAXAAUAAAASAAkAAQAXAAUAAAASAAoAAQAXAAIAAAASAAsAAQAXAAMAAAASAAwAAQAXAAQAAAASAA0AAQAXAAUAAAARAAYAAQAEAAUAAAARAAcAAQAEAAUAAAARAAgAAQAEAAUAAAARAAkAAQAEAAUAAAARAAoAAQAEAAUAAAARAAsAAQAEAAUAAAARAAwAAQAEAAUAAAARAA0AAQAEAAUAAAASAAQAAQAMAAEAAAASAAUAAQAXAAIAAAASAAYAAQAXAAMAAAASAA4AAQAXAAYAAAAYAAYAAQAEAAUAAAAYAAcAAQAEAAUAAAAYAAgAAQAEAAUAAAAYAAkAAQAEAAUAAAAYAAsAAQAEAAUAAAAYAAwAAQAEAAUAAAAYAA0AAQAEAAUAAAAYAAoAAQAEAAUAAAAXAAQAAQAJAAEAAAAXAAUAAQAWAAIAAAAXAAYAAQAWAAMAAAAXAAcAAQAWAAQAAAAXAAgAAQAWAAUAAAAXAAkAAQAWAAIAAAAXAAoAAQAWAAIAAAAXAAsAAQAWAAIAAAAXAAwAAQAWAAIAAAAXAA0AAQAWAAIAAAAXAA4AAQAWAAYAAAA=")
 tile_set = SubResource("TileSet_tstsd")
 use_kinematic_bodies = true
 
