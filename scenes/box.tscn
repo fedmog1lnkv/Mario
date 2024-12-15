@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dee666536g05j"]
+
+[ext_resource type="Script" path="res://scripts/objects/box.gd" id="1_a2arr"]
+[ext_resource type="Texture2D" uid="uid://naf08b153vv1" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_k17sc"]
+[ext_resource type="Script" path="res://scripts/combat/hurtbox.gd" id="3_knxbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tpb3"]
+size = Vector2(16, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mys3"]
+size = Vector2(16, 18)
+
+[node name="Box" type="StaticBody2D"]
+position = Vector2(407, -47)
+script = ExtResource("1_a2arr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_k17sc")
+region_enabled = true
+region_rect = Rect2(48, 31, 16, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3tpb3")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_knxbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_6mys3")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl6kvfyvllhel"]
+
+[ext_resource type="Texture2D" uid="uid://cqnek7ejtaus5" path="res://assets/fedkru/sprites/Upgrade.png" id="1_2hqa0"]
+[ext_resource type="Script" path="res://scripts/ui/powerup.gd" id="2_052t7"]
+
+[node name="TextureRect" type="TextureRect"]
+texture = ExtResource("1_2hqa0")
+expand_mode = 2
+script = ExtResource("2_052t7")

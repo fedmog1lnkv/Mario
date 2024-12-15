@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://de0odfconblch"]
+[gd_scene load_steps=32 format=3 uid="uid://de0odfconblch"]
 
 [ext_resource type="Script" path="res://scripts/entities/character/character.gd" id="1_wrl1e"]
 [ext_resource type="Texture2D" uid="uid://duxqqvpll2w25" path="res://assets/characters/Male Hand/Male Sword.png" id="2_38ta8"]
@@ -15,9 +15,10 @@
 [ext_resource type="Script" path="res://scripts/entities/character/states/jump.gd" id="7_muxnw"]
 [ext_resource type="Script" path="res://scripts/entities/character/states/fall.gd" id="8_4nyxe"]
 [ext_resource type="Script" path="res://scripts/entities/character/states/attack.gd" id="15_fij80"]
-[ext_resource type="Script" path="res://combat/attacker.gd" id="16_g44cf"]
-[ext_resource type="Script" path="res://combat/hitbox.gd" id="16_gwvec"]
-[ext_resource type="Script" path="res://combat/hurtbox.gd" id="17_86nca"]
+[ext_resource type="Script" path="res://scripts/entities/character/states/dead.gd" id="16_dphxt"]
+[ext_resource type="Script" path="res://scripts/combat/attacker.gd" id="16_g44cf"]
+[ext_resource type="Script" path="res://scripts/combat/hitbox.gd" id="16_gwvec"]
+[ext_resource type="Script" path="res://scripts/combat/hurtbox.gd" id="17_86nca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmeem"]
 size = Vector2(17, 43)
@@ -236,7 +237,6 @@ size = Vector2(16.8125, 44.625)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-30, 50)
-collision_layer = 0
 script = ExtResource("1_wrl1e")
 
 [node name="Skin" type="Node2D" parent="."]
@@ -315,6 +315,9 @@ script = ExtResource("8_4nyxe")
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("15_fij80")
 
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("16_dphxt")
+
 [node name="PlayerAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vv43d")
@@ -325,8 +328,8 @@ position = Vector2(-1, -22)
 script = ExtResource("16_g44cf")
 
 [node name="HitBox" type="Area2D" parent="Attacker"]
-collision_layer = 2
-collision_mask = 0
+collision_layer = 4
+collision_mask = 4
 monitoring = false
 script = ExtResource("16_gwvec")
 
@@ -337,6 +340,8 @@ debug_color = Color(0.972325, 0, 0.441831, 0.42)
 
 [node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2(-1, -22)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("17_86nca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]

@@ -1,6 +1,9 @@
 extends CharacterState
 
 func on_physics_process(delta: float):
+	if character.jump():
+		change_state("jumping")
+		return
 	if not character.is_falling():
 		change_state("idle")
 		return

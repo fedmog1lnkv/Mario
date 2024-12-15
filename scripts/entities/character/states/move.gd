@@ -13,6 +13,7 @@ func on_physics_process(delta: float):
 	if character.is_falling():
 		change_state("falling")
 		return
+	character.count_coyoute_timer(delta)
 	character.animate("moving")
 	character.jump()
 	character.walk()
