@@ -12,6 +12,8 @@ class_name Slime extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var floor_finder: ObjectFinder = $FloorFinder
 
+@onready var dead_player: AudioStreamPlayer2D = $Dead
+
 var powerups: Array[PowerUp] = []
 var gravity_magnitude : float = 9.8
 var x_input = 0

@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_player_died():
 	visible = true
+	$DeadPlayer.play()
 
 func _on_respawn_pressed() -> void:
 	EventBus.player_respawned.emit()

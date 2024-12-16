@@ -21,6 +21,10 @@ EventBus="*res://scripts/event_bus/event_bus.gd"
 PowerupDatabase="*res://scripts/data/powerup_database.gd"
 LootHandler="*res://scripts/event_bus/handlers/loot_handler.gd"
 
+[display]
+
+window/size/mode=4
+
 [dotnet]
 
 project/assembly_name="Mario"

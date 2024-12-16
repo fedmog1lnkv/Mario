@@ -17,4 +17,7 @@ func _ready() -> void:
 				is_dead = true
 				if loot != null:
 					EventBus.loot_gained.emit(entity, loot)
+					$Loot.play()
+				else:
+					$Break.play()
 	)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cchtc3a4r7whl"
+path="res://.godot/imported/2 - The Cave.ogg-09cf859422314f49ea71887e54a361ea.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Ninjas/Musics/2 - The Cave.ogg"
+dest_files=["res://.godot/imported/2 - The Cave.ogg-09cf859422314f49ea71887e54a361ea.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
