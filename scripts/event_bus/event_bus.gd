@@ -7,3 +7,5 @@ signal game_restarted()
 signal player_respawned()
 
 signal loot_gained(character: Node2D, loot: PowerUp)
+
+signal level_changed(level: String)

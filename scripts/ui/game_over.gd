@@ -13,3 +13,7 @@ func _on_player_died():
 func _on_respawn_pressed() -> void:
 	EventBus.player_respawned.emit()
 	visible = false
+
+
+func _on_menu_pressed() -> void:
+	EventBus.level_changed.emit('main_menu')
